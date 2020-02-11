@@ -9,7 +9,7 @@ pipeline {
         }
 		stage('spinning up docker images'){
         	steps {
-                	sh 'docker-compose up --force-recreate' 
+                	sh 'docker-compose up -d' 
              }	
         }
      
