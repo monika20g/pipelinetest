@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh "${M2_HOME}/bin/mvn test"
             }
         }
         stage('Destroy - After Running tests on Containers') { 
