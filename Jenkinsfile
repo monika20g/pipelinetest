@@ -29,7 +29,7 @@ pipeline {
         stage('Test') {
             steps {
 		    
-		cd /Users/monika/.jenkins/workspace/pipelineTest   
+		dir "/Users/monika/.jenkins/workspace/pipelineTest"   
                 sh "${M2_HOME}/bin/mvn test"
             }
         }
