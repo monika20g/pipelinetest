@@ -15,10 +15,10 @@ pipeline {
      
         stage('Build') { 
             steps {
-                def mvnHome = tool name: 'M2_HOME', type: 'maven'
-                sh"${mvnHome}/bin/mvn -B -DskipTests clean package"
-
-            }
+    def mvnHome = tool name: 'M2_HOME', type: 'maven'
+    sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
+		    
+	    }        
         }
         stage('Test') {
             steps {
