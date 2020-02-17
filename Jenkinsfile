@@ -3,6 +3,7 @@ pipeline {
 
 	
     stages {
+  def mvnHome
         stage('Pull latest Code') { 
              steps {
               // Get some code from a GitHub repository
@@ -17,8 +18,8 @@ pipeline {
      
         stage('Build') { 
             steps {
-    def mvnHome = tool name: 'M2_HOME', type: 'maven'
-    sh "'${mvnHome}/bin/mvn' -B -DskipTests clean package"
+   mvnHome = tool 'M2_HOME'
+		    sh "'${mvnHome}/bin/mvn' -B -DskipTests clean package"
 		    
 	    }        
         }
