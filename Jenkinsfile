@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+   
 
 	
     stages {
@@ -18,8 +18,8 @@ pipeline {
      
         stage('Build') { 
             steps {
-            def mvnHome
-         mvnHome=tool name: 'M2_HOME', type: 'maven'
+           
+         def mvnHome=tool name: 'M2_HOME', type: 'maven'
         sh "'${mvnHome}/bin/mvn' -B -DskipTests clean package"		
 		   
 		    
