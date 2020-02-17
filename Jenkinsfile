@@ -9,7 +9,7 @@ pipeline {
         }
 		stage('spinning up docker images'){
         	steps {
-                	sh 'docker-compose up -d' 
+                	sh '/usr/bin/docker-compose up -d' 
              }	
         }
      
