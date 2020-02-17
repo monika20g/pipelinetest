@@ -28,6 +28,8 @@ pipeline {
         }
         stage('Test') {
             steps {
+		    
+		    echo ${workspace}    
                 sh "${M2_HOME}/bin/mvn test"
             }
         }
