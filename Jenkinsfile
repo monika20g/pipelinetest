@@ -15,7 +15,7 @@ pipeline {
      
         stage('Build') { 
             steps {
-                def myHome=tool name: 'M2_HOME', type: 'maven'
+                def myHome = tool name: 'M2_HOME', type: 'maven'
                 sh "${myHome}/bin/mvn -B -DskipTests clean package"
 
             }
