@@ -3,7 +3,7 @@ pipeline {
 
 	
     stages {
-  def mvnHome
+
         stage('Pull latest Code') { 
              steps {
               // Get some code from a GitHub repository
@@ -13,13 +13,15 @@ pipeline {
 		stage('spinning up docker images'){
         	steps {
                 	sh '/usr/local/bin/docker-compose up -d' 
-             }	
+			          }	
         }
      
         stage('Build') { 
             steps {
-   mvnHome = tool 'M2_HOME'
-		    sh "'${mvnHome}/bin/mvn' -B -DskipTests clean package"
+            def mvnHome
+         mvnHome=tool name: 'M2_HOME', type: 'maven'
+        sh "'${mvnHome}/bin/mvn' -B -DskipTests clean package"		
+		   
 		    
 	    }        
         }
