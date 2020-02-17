@@ -21,7 +21,7 @@ pipeline {
             steps {
            
      
-        sh "${M2_HOME}/bin/mvn -B -DskipTests clean package"		
+        sh "${M2_HOME}/bin/mvn -B  clean package"		
 		   
 		    
 	    }        
