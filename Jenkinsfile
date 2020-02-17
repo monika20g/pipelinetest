@@ -1,7 +1,8 @@
 pipeline {
    
-
-	
+tools {
+    maven 'M2_HOME'
+  }	
     stages {
 
         stage('Pull latest Code') { 
@@ -20,7 +21,7 @@ pipeline {
             steps {
            
          def mvnHome=tool name: 'M2_HOME', type: 'maven'
-        sh "'${mvnHome}/bin/mvn' -B -DskipTests clean package"		
+        sh "${mvnHome}/bin/mvn -B -DskipTests clean package"		
 		   
 		    
 	    }        
